@@ -378,7 +378,7 @@
       <children xsi:type="basic:PartStack" xmi:id="_8auvYfbvEeybU5v-VHc8WA" elementId="PartStack@7acb92e4"/>
     </sharedElements>
     <sharedElements xsi:type="basic:Part" xmi:id="_NlkhMPICEeyr0-ger1TGEg" elementId="org.eclipse.ui.navigator.ProjectExplorer" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityView" label="Project Explorer" iconURI="platform:/plugin/org.eclipse.ui.navigator.resources/icons/full/eview16/resource_persp.gif" tooltip="" closeable="true">
-      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;/>"/>
+      <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;view CommonNavigator.LINKING_ENABLED=&quot;0&quot; currentWorkingSetName=&quot;Aggregate for window 1655885680762&quot; org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets=&quot;0&quot;/>"/>
       <tags>View</tags>
       <tags>categoryTag:General</tags>
       <tags>active</tags>
@@ -562,7 +562,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NaaaEPICEeyr0-ger1TGEg" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_Dhi_0PeaEeyzxc8IVVWujQ" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_NOjIe_ICEeyr0-ger1TGEg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_w-S1IPebEeyNS4RPcX3qNA" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_NOjIe_ICEeyr0-ger1TGEg"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NaaaEfICEeyr0-ger1TGEg" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -583,7 +583,7 @@
       <children xsi:type="menu:ToolBar" xmi:id="_NnP8MPICEeyr0-ger1TGEg" elementId="org.eclipse.search.searchActionSet">
         <tags>Draggable</tags>
       </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_hIza0PIDEeyr0-ger1TGEg" elementId="org.eclipse.ui.edit.text.actionSet.presentation">
+      <children xsi:type="menu:ToolBar" xmi:id="_hIza0PIDEeyr0-ger1TGEg" elementId="org.eclipse.ui.edit.text.actionSet.presentation" visible="false">
         <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_Hfxq0PIGEeyr0-ger1TGEg" elementId="org.eclipse.wst.jsdt.ui.JavaElementCreationActionSet" visible="false">
@@ -601,12 +601,12 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NaaaFfICEeyr0-ger1TGEg" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_DhkN9PeaEeyzxc8IVVWujQ" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_NOihePICEeyr0-ger1TGEg"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_w-UDRPebEeyNS4RPcX3qNA" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_NOihePICEeyr0-ger1TGEg"/>
       </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_Dt1vYPeaEeyzxc8IVVWujQ" elementId="org.eclipse.jst.jsp.core.jspsource.source">
+      <children xsi:type="menu:ToolBar" xmi:id="_Dt1vYPeaEeyzxc8IVVWujQ" elementId="org.eclipse.jst.jsp.core.jspsource.source" visible="false">
         <tags>Draggable</tags>
       </children>
-      <children xsi:type="menu:ToolBar" xmi:id="_DvII0PeaEeyzxc8IVVWujQ" elementId="org.eclipse.jdt.ui.CompilationUnitEditor">
+      <children xsi:type="menu:ToolBar" xmi:id="_DvII0PeaEeyzxc8IVVWujQ" elementId="org.eclipse.jdt.ui.CompilationUnitEditor" visible="false">
         <tags>Draggable</tags>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_NaaaFvICEeyr0-ger1TGEg" elementId="group.editor" toBeRendered="false">
