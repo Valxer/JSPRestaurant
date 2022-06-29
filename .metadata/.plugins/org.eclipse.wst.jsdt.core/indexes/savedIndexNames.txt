@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+C:\Users\Valxer\WorkspaceGithub\JSPRestaurant\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2844081302.index
+1926834100.index
+2018054536.index
+1219726470.index
+2629421441.index
+414941904.index
