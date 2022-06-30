@@ -15,7 +15,7 @@
       <ul class="nav justify-content-center">
         <li class="nav-item"> <a class="nav-link" href="Accueil.jsp">Accueil</a></li>
         <li class="nav-item"> <a class="nav-link" href="#">Menu</a> </li>
-        <li class="nav-item"> <a class="nav-link" href="#">Commande</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="ServletAccesCommande">Commande</a> </li>
         <li class="nav-item"> <a class="nav-link" href="Connexion.jsp">Connexion/Inscription</a> </li>
       </ul>
     </div>

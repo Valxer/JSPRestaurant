@@ -1,7 +1,6 @@
 package serv;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -9,21 +8,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import dao.DaoClientImpl;
-import model.Client;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ServletConnexion
+ * Servlet implementation class ServletAccesCommande
  */
-@WebServlet("/ServletConnexion")
-public class ServletConnexion extends HttpServlet {
+@WebServlet("/ServletAccesCommande")
+public class ServletAccesCommande extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletConnexion() {
+    public ServletAccesCommande() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -33,24 +30,12 @@ public class ServletConnexion extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int identifiant = Integer.parseInt(request.getParameter("identifiant"));
-		String mdp = request.getParameter("mdp");
-		
-		try {
-			Client c = new DaoClientImpl().findById(identifiant);
-			if (c != null){
-				if (c.getMdp().equals(mdp)){
-					request.setAttribute("client", c);
-					request.getSession().setAttribute("client", c);
-					request.getRequestDispatcher("WEB-INF/ConfirmationConnexion.jsp").forward(request, response);
-				}
-			}
-			request.getRequestDispatcher("WEB-INF/ErreurConnexion.jsp").forward(request, response);
-		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		HttpSession session = request.getSession();
+		if (session.getAttribute("client") == null){
+			request.getRequestDispatcher("Connexion.jsp").forward(request, response);
+		} else {
+			request.getRequestDispatcher("WEB-INF/Commande.jsp").forward(request, response);
 		}
-		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
