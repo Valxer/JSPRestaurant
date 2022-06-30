@@ -3,16 +3,14 @@ package model;
 public class Commande {
 	private int id;
 	private int idclient;
-	private Status status;
 	
 	public Commande() {
 		super();
 	}
-	public Commande(int id, int idclient, Status status) {
+	public Commande(int id, int idclient) {
 		super();
 		this.id = id;
 		this.idclient = idclient;
-		this.status = status;
 	}
 	
 	public int getId() {
@@ -27,15 +25,9 @@ public class Commande {
 	public void setIdclient(int idclient) {
 		this.idclient = idclient;
 	}
-	public Status getStatus() {
-		return status;
-	}
-	public void setStatus(Status status) {
-		this.status = status;
-	}
 	@Override
 	public String toString() {
-		return "Commande [id=" + id + ", idclient=" + idclient + ", status=" + status + "]";
+		return "Commande [id=" + id + ", idclient=" + idclient + "]";
 	}
 	
 	
