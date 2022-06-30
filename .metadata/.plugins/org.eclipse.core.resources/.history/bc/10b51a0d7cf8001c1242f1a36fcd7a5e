@@ -1,0 +1,73 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Commande;
+
+public class CommandeDaoImpl implements DaoCommande {
+
+	public List<Commande> findAll() throws ClassNotFoundException, Exception {
+		ArrayList<Commande> liste = new ArrayList<Commande>();
+
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tdb1", "root", "root");
+
+		String sql = "select * from Commandes";
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+
+		Commande p = null;
+		while (rs.next()) {
+			p = new Commande();
+			p.setId(rs.getInt("id"));
+			p.setMarque(rs.getString("marque"));
+			p.setPrix(rs.getInt("prix"));
+			liste.add(p);
+
+		}
+
+		conn.close();
+		return liste;
+	}
+
+	public Commande findById(Integer id) {
+		return null;
+	}
+
+	public List<Commande> selectByName(String nom) {
+		return null;
+	}
+
+	public void update(Commande obj) {
+	}
+
+	@Override
+	public Commande findById(Integer id) throws ClassNotFoundException, Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void create(Commande obj) throws ClassNotFoundException, Exception {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void update(Commande obj) throws ClassNotFoundException, Exception {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void delete(Commande obj) throws ClassNotFoundException, Exception {
+		// TODO Auto-generated method stub
+
+	}
+
+}

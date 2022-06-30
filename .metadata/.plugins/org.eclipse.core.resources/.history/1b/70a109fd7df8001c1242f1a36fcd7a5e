@@ -1,0 +1,6 @@
+package dao;
+
+import model.Commande;
+
+public interface DaoCommandeArticle extends Dao<Commande, Integer> {
+}

@@ -1,0 +1,60 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Article;
+
+public class ArticleDaoImpl implements DaoCommande{
+
+	public void delete(Article p) {
+		
+	}
+
+	public void create(Article p) {
+
+	}
+
+	public List<Article> findAll() throws ClassNotFoundException, Exception {
+		ArrayList<Article> liste = new ArrayList<Article>();
+
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tdb1", "root", "root");
+
+		String sql = "select * from articles";
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+
+		Article p = null;
+		while (rs.next()) {
+			p = new Article();
+			p.setRef(rs.getString("ref"));
+			p.setMarque(rs.getString("marque"));
+			p.setPrix(rs.getInt("prix"));
+			liste.add(p);
+
+		}
+
+		conn.close();
+		return liste;
+	}
+
+	public Article findById(Integer id) {
+		return null;
+	}
+
+
+	public List<Article> selectByName(String nom) {
+		return null;
+	}
+
+	public void update(Article obj) {		
+	}
+
+
+	
+}
