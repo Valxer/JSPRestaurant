@@ -1,0 +1,7 @@
+package model;
+
+public class Commande {
+	private int id;
+	private int idclient;
+	private enum status {ONGOING, COMPLETED};
+}
