@@ -14,7 +14,7 @@ import model.Commande;
 
 public class CommandeDaoImpl implements DaoCommande {
 
-	public List<Commande> findAll() throws ClassNotFoundException, Exception {
+	public List<Commande> findAll() throws ClassNotFoundException, SQLException {
 		ArrayList<Commande> liste = new ArrayList<Commande>();
 
 		Class.forName("com.mysql.jdbc.Driver");
@@ -44,7 +44,7 @@ public class CommandeDaoImpl implements DaoCommande {
 	}
 
 	@Override
-	public Commande findById(Integer id) throws ClassNotFoundException, Exception {
+	public Commande findById(Integer id) throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
 
@@ -67,7 +67,7 @@ public class CommandeDaoImpl implements DaoCommande {
 	}
 
 	@Override
-	public void create(Commande obj) throws ClassNotFoundException, Exception {
+	public void create(Commande obj) throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
 
@@ -97,11 +97,11 @@ public class CommandeDaoImpl implements DaoCommande {
 	}
 
 	@Override
-	public void update(Commande obj) throws ClassNotFoundException, Exception {
+	public void update(Commande obj) throws ClassNotFoundException, SQLException {
 	}
 
 	@Override
-	public void delete(Commande obj) throws ClassNotFoundException, Exception {
+	public void delete(Commande obj) throws ClassNotFoundException, SQLException {
 	}
 
 }

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import model.CommandeArticle;
 
 public class CommandeArticleDaoImpl implements DaoCommandeArticle {
 
-	public List<CommandeArticle> findAll() throws ClassNotFoundException, Exception {
+	public List<CommandeArticle> findAll() throws ClassNotFoundException, SQLException {
 		ArrayList<CommandeArticle> liste = new ArrayList<CommandeArticle>();
 
 		Class.forName("com.mysql.jdbc.Driver");
@@ -41,7 +42,7 @@ public class CommandeArticleDaoImpl implements DaoCommandeArticle {
 	}
 
 	@Override
-	public CommandeArticle findById(Integer id) throws ClassNotFoundException, Exception {
+	public CommandeArticle findById(Integer id) throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
 
@@ -63,7 +64,7 @@ public class CommandeArticleDaoImpl implements DaoCommandeArticle {
 	}
 
 	@Override
-	public void create(CommandeArticle obj) throws ClassNotFoundException, Exception {
+	public void create(CommandeArticle obj) throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
 
@@ -79,11 +80,11 @@ public class CommandeArticleDaoImpl implements DaoCommandeArticle {
 	}
 
 	@Override
-	public void update(CommandeArticle obj) throws ClassNotFoundException, Exception {
+	public void update(CommandeArticle obj) throws ClassNotFoundException, SQLException {
 	}
 
 	@Override
-	public void delete(CommandeArticle obj) throws ClassNotFoundException, Exception {
+	public void delete(CommandeArticle obj) throws ClassNotFoundException, SQLException {
 	}
 
 }
