@@ -1,0 +1,127 @@
+package dao;
+
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Personne;
+
+public class PersonneDaoImpl implements DaoPersonne{
+
+	public void delete(Personne p) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tdb1", "root", "root");
+
+		String sql = "delete from  personnes where id= " + p.getId();
+
+		Statement st = conn.createStatement();
+		st.executeUpdate(sql);
+
+		conn.close();
+
+	}
+
+	public void update(Personne p) throws ClassNotFoundException, SQLException {
+
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tdb1", "root", "root");
+
+		String sql = "update personnes set nom='" + p.getNom() + "',prenom='" + p.getPrenom() + "',age="+p.getAge()+" where id="
+				+ p.getId();
+		Statement st = conn.createStatement();
+		st.executeUpdate(sql);
+
+		conn.close();
+	}
+
+	public void create(Personne p) throws ClassNotFoundException, SQLException {
+
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tdb1", "root", "root");
+
+		String sql = "insert into personnes values(?,?,?,?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, p.getId());
+		ps.setString(2, p.getNom());
+		ps.setString(3, p.getPrenom());
+		ps.setInt(4, p.getAge());
+
+		ps.executeUpdate();
+
+		conn.close();
+	}
+
+	public List<Personne> findAll() throws ClassNotFoundException, SQLException {
+		ArrayList<Personne> liste = new ArrayList<Personne>();
+
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tdb1", "root", "root");
+
+		String sql = "select * from personnes";
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+
+		Personne p = null;
+		while (rs.next()) {
+			p = new Personne();
+			p.setId(rs.getInt("id"));
+			p.setNom(rs.getString("nom"));
+			p.setPrenom(rs.getString("prenom"));
+			p.setAge(rs.getInt("age"));
+			liste.add(p);
+
+		}
+
+		conn.close();
+		return liste;
+	}
+
+	public Personne findById(Integer id) throws ClassNotFoundException, SQLException {
+		Personne p = null;
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tdb1", "root", "root");
+
+		String sql = "select * from personnes where id=" + id;
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+
+		while (rs.next()) {
+			p = new Personne();
+			p.setId(rs.getInt("id"));
+			p.setNom(rs.getString("nom"));
+			p.setPrenom(rs.getString("prenom"));
+			p.setAge(rs.getInt("age"));
+		}
+		conn.close();
+		return p;
+	}
+
+
+	public List<Personne> selectByName(String nom) throws ClassNotFoundException, SQLException {
+		ArrayList<Personne> liste = new ArrayList<Personne>();
+		
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/tdb1", "root", "root");
+
+		String sql = "select * from personnes where nom ='" + nom + "'";
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+
+		Personne p = null;
+		while (rs.next()) {
+			p = new Personne();
+			p.setId(rs.getInt("id"));
+			p.setNom(rs.getString("nom"));
+			p.setPrenom(rs.getString("prenom"));
+			p.setAge(rs.getInt("age"));
+			liste.add(p);
+
+		}
+		conn.close();
+		
+		return liste;
+	}
+
+
+	
+}

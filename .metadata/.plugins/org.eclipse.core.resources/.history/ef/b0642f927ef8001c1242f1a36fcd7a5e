@@ -1,0 +1,91 @@
+package dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.CommandeArticle;
+
+public class CommandeArticleDaoImpl implements DaoCommandeArticle {
+
+	public List<CommandeArticle> findAll() throws ClassNotFoundException, Exception {
+		ArrayList<CommandeArticle> liste = new ArrayList<CommandeArticle>();
+
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
+
+		String sql = "select * from commande_articles";
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+
+		CommandeArticle p = null;
+		while (rs.next()) {
+			p = new CommandeArticle();
+			p.setIdCommande(rs.getInt("idcommande"));
+			p.setIdArticle(rs.getInt("idarticle"));
+			p.setQuantite(rs.getInt("quantite"));
+			liste.add(p);
+
+		}
+
+		conn.close();
+		return liste;
+	}
+
+	public List<CommandeArticle> selectByName(String nom) {
+		return null;
+	}
+
+	@Override
+	public CommandeArticle findById(Integer id) throws ClassNotFoundException, Exception {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
+
+		String sql = "select * from commande_articles where id =" + id;
+		Statement st = conn.createStatement();
+		ResultSet rs = st.executeQuery(sql);
+
+		CommandeArticle p = null;
+		while (rs.next()) {
+			p = new CommandeArticle();
+			p.setId(rs.getInt("id"));
+			p.setIdclient(rs.getInt("idclient"));
+			p.setDate(rs.getDate("date"));
+			p.setTotal(rs.getInt("total"));
+
+		}
+
+		conn.close();
+		return p;
+	}
+
+	@Override
+	public void create(CommandeArticle obj) throws ClassNotFoundException, Exception {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
+
+		String sql = "insert into CommandeArticles values(?,?,?,?)";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, obj.getId());
+		ps.setInt(2, obj.getIdclient());
+		ps.setDate(3, obj.getDate());
+		ps.setInt(4, obj.getTotal());
+
+		ps.executeUpdate();
+
+		conn.close();
+	}
+
+	@Override
+	public void update(CommandeArticle obj) throws ClassNotFoundException, Exception {
+	}
+
+	@Override
+	public void delete(CommandeArticle obj) throws ClassNotFoundException, Exception {
+	}
+
+}

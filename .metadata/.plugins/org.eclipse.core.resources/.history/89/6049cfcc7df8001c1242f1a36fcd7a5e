@@ -1,0 +1,9 @@
+package model;
+
+
+public class CommandeArticle {
+	private int idCommande;
+	private int idArticle;
+	private int quantite;
+
+}

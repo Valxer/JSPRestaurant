@@ -1,0 +1,17 @@
+127.0.0.1 - - [30/Jun/2022:16:17:42 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [30/Jun/2022:16:17:51 +0200] "GET /ProjetRestaurantJSP/OrderCompleted HTTP/1.1" 200 301
+127.0.0.1 - - [30/Jun/2022:16:29:22 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [30/Jun/2022:16:29:27 +0200] "GET /ProjetRestaurantJSP/OrderCompleted HTTP/1.1" 200 380
+127.0.0.1 - - [30/Jun/2022:16:31:18 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [30/Jun/2022:16:31:19 +0200] "GET /ProjetRestaurantJSP/OrderCompleted HTTP/1.1" 200 315
+127.0.0.1 - - [30/Jun/2022:16:35:33 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [30/Jun/2022:16:35:50 +0200] "GET /ProjetRestaurantJSP/OrderCompleted HTTP/1.1" 200 -
+127.0.0.1 - - [30/Jun/2022:16:39:15 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [30/Jun/2022:16:39:29 +0200] "GET /ProjetRestaurantJSP/OrderCompleted HTTP/1.1" 200 -
+0:0:0:0:0:0:0:1 - - [30/Jun/2022:16:40:52 +0200] "GET /ProjetRestaurantJSP/OrderCompleted HTTP/1.1" 200 315
+127.0.0.1 - - [30/Jun/2022:17:02:23 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [30/Jun/2022:17:02:26 +0200] "GET /ProjetRestaurantJSP/OrderCompleted HTTP/1.1" 200 305
+127.0.0.1 - - [30/Jun/2022:17:04:25 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [30/Jun/2022:17:04:27 +0200] "GET /ProjetRestaurantJSP/OrderCompleted HTTP/1.1" 200 338
+127.0.0.1 - - [30/Jun/2022:17:05:27 +0200] "GET / HTTP/1.1" 404 996
+0:0:0:0:0:0:0:1 - - [30/Jun/2022:17:05:30 +0200] "GET /ProjetRestaurantJSP/OrderCompleted HTTP/1.1" 200 338

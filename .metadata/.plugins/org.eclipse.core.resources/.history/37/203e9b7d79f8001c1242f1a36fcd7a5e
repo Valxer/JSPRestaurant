@@ -1,0 +1,35 @@
+package model;
+
+public class Commande {
+	private int id;
+	private int idclient;
+	
+	public Commande() {
+		super();
+	}
+	public Commande(int id, int idclient) {
+		super();
+		this.id = id;
+		this.idclient = idclient;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getIdclient() {
+		return idclient;
+	}
+	public void setIdclient(int idclient) {
+		this.idclient = idclient;
+	}
+	}
+	@Override
+	public String toString() {
+		return "Commande [id=" + id + ", idclient=" + idclient + "]";
+	}
+	
+	
+}
