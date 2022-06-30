@@ -11,7 +11,6 @@ INDEX VERSION 1.127+C:\Users\Valxer\WorkspaceGithub\JSPRestaurant\.metadata\.plu
 1792383540.index
 48817752.index
 2443189267.index
-2121889143.index
 2335405907.index
 2969293276.index
 1416821754.index
