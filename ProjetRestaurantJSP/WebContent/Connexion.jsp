@@ -40,8 +40,6 @@
 	
 	<h3>Première visite ? Inscrivez-vous:</h3>
 	<form action = "ServletInscription">
-		<label for="identifiant">Identifiant</label>
-		<input name = "identifiant" type = "number" required/><br><br>
 	
 		<label for="mdp">Mot de passe</label>
 		<input name = "mdp" type = "password" required/><br><br>
