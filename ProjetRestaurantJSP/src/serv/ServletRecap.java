@@ -7,19 +7,18 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class ServletAccesCommande
+ * Servlet implementation class ServletRecap
  */
-@WebServlet("/ServletAccesCommande")
-public class ServletAccesCommande extends HttpServlet {
+@WebServlet("/Recap")
+public class ServletRecap extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public ServletAccesCommande() {
+	public ServletRecap() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
@@ -30,14 +29,7 @@ public class ServletAccesCommande extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		HttpSession session = request.getSession();
-		if (session.getAttribute("client") == null) {
-			request.getRequestDispatcher("Connexion.jsp").forward(request, response);
-		} else {
-			request.getRequestDispatcher("choixarticle.jsp").forward(request, response);
-		}
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		request.getRequestDispatcher("WEB-INF/recap.jsp").forward(request, response);
 	}
 
 	/**
