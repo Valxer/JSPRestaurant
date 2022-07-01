@@ -8,18 +8,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-	<header>
-	    <h1><a href="Accueil.jsp">Restaurant</a></h1>
-	
-	    <div id="navigation">
-	      <ul class="nav justify-content-center">
-	        <li class="nav-item"> <a class="nav-link" href="Accueil.jsp">Accueil</a></li>
-	        <li class="nav-item"> <a class="nav-link" href="#">Menu</a> </li>
-	        <li class="nav-item"> <a class="nav-link" href="ServletAccesCommande">Commande</a> </li>
-	        <li class="nav-item"> <a class="nav-link" href="Connexion.jsp">Connexion/Inscription</a> </li>
-	      </ul>
-	    </div>
-	</header>
+	<%@ include file="../header.jsp" %>
   
 	<h1>Login ou mot de passe incorrect</h1>
 </body>

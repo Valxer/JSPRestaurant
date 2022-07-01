@@ -9,26 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<header>
-	    <h1><a href="Accueil.jsp">Restaurant</a></h1>
-	
-	    <div id="navigation">
-	      <ul class="nav justify-content-center">
-	        <li class="nav-item"> <a class="nav-link" href="Accueil.jsp">Accueil</a></li>
-	        <li class="nav-item"> <a class="nav-link" href="#">Menu</a> </li>
-	        <li class="nav-item"> <a class="nav-link" href="ServletAccesCommande">Commande</a> </li>
-	        <% 
-        	Client c = (Client)session.getAttribute("client");
-        	if (c == null){
-        		out.print("<li class='nav-item'> <a class='nav-link' href='Connexion.jsp'>Connexion/Inscription</a> </li>");
-        	} else {
-        		out.print("<li class='nav-item'> <a class='nav-link' href='ServletDeconnexion'>Deconnexion</a> </li>");
-        	}
-        
-        	%>
-	      </ul>
-	    </div>
-	</header>
+	<%@ include file="../header.jsp" %>
   
 	<h1>Sélectionnez vos plats</h1>
 	
