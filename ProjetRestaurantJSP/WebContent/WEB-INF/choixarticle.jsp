@@ -53,6 +53,7 @@
 			</tbody>
 		</table>
 	</div>
+	<a href="Recap">Valider</a>
 </div>
 <div>
 	<div class="d-flex justify-content-end">

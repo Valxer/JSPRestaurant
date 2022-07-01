@@ -30,8 +30,8 @@ public class ArticleDaoImpl implements DaoArticle {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
 
-		String sql = "update Articles set nom='" + p.getNom() + "',description='" + p.getDescription() + "',prix=" + p.getPrix()
-		+ "',image=" + p.getImage()+ " where id=" + p.getRef();
+		String sql = "update Articles set nom='" + p.getNom() + "',description='" + p.getDescription() + "',prix="
+				+ p.getPrix() + "',image=" + p.getImage() + " where id=" + p.getRef();
 		Statement st = conn.createStatement();
 		st.executeUpdate(sql);
 

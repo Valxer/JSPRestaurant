@@ -72,7 +72,7 @@ public class CommandeArticleDaoImpl implements DaoCommandeArticle {
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setInt(1, obj.getIdCommande());
 		ps.setInt(2, obj.getIdArticle());
-		ps.setInt(4, obj.getQuantite());
+		ps.setInt(3, obj.getQuantite());
 
 		ps.executeUpdate();
 

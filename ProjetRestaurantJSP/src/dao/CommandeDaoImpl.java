@@ -82,6 +82,24 @@ public class CommandeDaoImpl implements DaoCommande {
 		conn.close();
 	}
 
+	public int createreturn(Commande obj) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
+
+		String sql = "insert into commandes values(null,?,?,?)";
+		PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+		ps.setInt(1, obj.getIdclient());
+		ps.setDate(2, new Date(obj.getDate().getTime()));
+		ps.setInt(3, obj.getTotal());
+
+		ps.executeUpdate();
+		ResultSet key = ps.getGeneratedKeys();
+		if (key.next())
+			return (key.getInt(1));
+		conn.close();
+		return 0;
+	}
+
 	public int getLastCommandeId(int clientId) throws SQLException, ClassNotFoundException {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
