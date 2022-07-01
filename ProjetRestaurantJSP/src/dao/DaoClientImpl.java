@@ -45,26 +45,13 @@ public class DaoClientImpl implements DaoClient{
         Class.forName("com.mysql.jdbc.Driver");
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
 
-<<<<<<< Updated upstream
 		String sql = "insert into clients values(null,?,?,?,?)";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, c.getMdp());
 		ps.setString(2, c.getNom());
 		ps.setString(3, c.getPrenom());
 		ps.setString(4, c.getAdresse());
-=======
-        String sql = "insert into clients values(null,?,?,?,?)";
-        PreparedStatement ps = conn.prepareStatement(sql);
-        //ps.setInt(1, c.getId());
-        ps.setString(1, c.getMdp());
-        ps.setString(2, c.getNom());
-        ps.setString(3, c.getPrenom());
-        ps.setString(4, c.getAdresse());
->>>>>>> Stashed changes
-
         ps.executeUpdate();
-
-<<<<<<< Updated upstream
 		conn.close();
 	}
 	
@@ -88,10 +75,7 @@ public class DaoClientImpl implements DaoClient{
 		conn.close();
 		return 0;
 	}
-=======
-        conn.close();
-    }
->>>>>>> Stashed changes
+
 
 	@Override
 	public void update(Client obj) throws ClassNotFoundException, SQLException {
