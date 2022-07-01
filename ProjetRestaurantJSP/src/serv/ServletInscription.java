@@ -34,7 +34,6 @@ public class ServletInscription extends HttpServlet {
 		// TODO Auto-generated method stub
 		
 		Client c = new Client();
-			c.setId(Integer.parseInt(request.getParameter("identifiant")));
 			c.setMdp(request.getParameter("mdp"));
 			c.setNom(request.getParameter("nom"));
 			c.setPrenom(request.getParameter("prenom"));
@@ -42,6 +41,7 @@ public class ServletInscription extends HttpServlet {
 			
 		try {
 			new DaoClientImpl().create(c);
+			request.setAttribute("numId", new DaoClientImpl().IdCreate(c));
 			request.getRequestDispatcher("WEB-INF/ConfirmationInscription.jsp").forward(request, response);
 		} catch (ClassNotFoundException | SQLException e) {
 			// TODO Auto-generated catch block
