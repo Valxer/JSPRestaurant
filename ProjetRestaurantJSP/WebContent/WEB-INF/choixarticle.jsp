@@ -20,7 +20,7 @@
 <div class="row justify-content-between">
 	<div id="menu sélection" class="col">
 		<p>Fais ton choix parmi nos plats de qualité:</p>
-		<form action="Ajout">
+		<form action="Ajout" method="post">
 			<select class="form-select" name="select">
 			  <option selected>Selectionne un article</option>
 			  <c:forEach var="article" items="${articles}">
@@ -53,11 +53,10 @@
 			</tbody>
 		</table>
 	</div>
-	<a href="Recap">Valider</a>
 </div>
 <div>
 	<div class="d-flex justify-content-end">
-		<a class="btn btn-success" href="#" role="button">Valider le panier</a>
+		<a class="btn btn-success" href="Recap" role="button">Valider le panier</a>
 	</div>
 </div>
 </div>
