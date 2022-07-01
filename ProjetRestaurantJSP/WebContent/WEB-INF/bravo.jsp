@@ -7,6 +7,7 @@
 <title>Restaurant | Order Completed</title>
 </head>
 <body>
+	<%@ include file="../header.jsp" %>
 	<h1>Order Completed</h1>
 	<p>Numéro de commande :
 	<%= session.getAttribute("p")%>
