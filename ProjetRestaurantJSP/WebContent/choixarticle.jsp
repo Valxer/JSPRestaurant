@@ -1,20 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Selection des articles</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 <body>
-<%@ include file="header.jsp" %>
-<h1>Fais ton repas</h1>
-<h3>La commande de Client.NOM-Prenom ( Montant de panier : panier.total(session))</h3>
-<div id="container">
-	<div id="menu sélection">
-		<p>Fais ton choix parmi nos plats de qualité:</p>
+<div class="container">
+<h1 class="row justify-content-center">Faites votre repas</h1>
+<h3>La commande de Mr/Mdm <c:out value="${client.nom}" /> <c:out value="${client.prenom}" />
+<c:if test ="${totalp != null}">
+(Montant de panier : <c:out value="${totalp}" /> &euro;)
+</c:if>
+</h3>
+<div class="row justify-content-between">
+	<div id="menu sÃ©lection" class="col">
+		<p>Fais ton choix parmi nos plats de qualitÃ©:</p>
 		<form action="Ajout">
 			<select class="form-select" name="select">
 			  <option selected>Selectionne un article</option>
@@ -23,17 +27,17 @@
 			  </c:forEach>
 			</select>
 			<div class="col-4">
-				Quantité :<input name="quantite" type="number">				
+				QuantitÃ© :<input name="quantite" type="number">				
 			</div>
 			<button type="submit" class="btn btn-primary" value="ajouter">Ajouter</button>			
 		</form>
 	</div>
-	<div id="panier">
+	<div id="panier" class="col">
 	<table class="table table-striped">
 			<thead class="thead-dark">
 				<tr>
 				    <th>Articles</th>
-				    <th>Quantité</th>
+				    <th>QuantitÃ©</th>
 				    <th>Prix total</th>
 				</tr>
 			</thead>
@@ -48,6 +52,12 @@
 			</tbody>
 		</table>
 	</div>
+</div>
+<div>
+	<div class="d-flex justify-content-end">
+		<a class="btn btn-success" href="#" role="button">Valider le panier</a>
+	</div>
+</div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
