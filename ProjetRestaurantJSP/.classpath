@@ -13,5 +13,9 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+<<<<<<< Updated upstream
+=======
+	<classpathentry kind="lib" path="C:/Users/Valxer/workspace/mysql-connector-java-5.0.8-bin.jar"/>
+>>>>>>> Stashed changes
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
