@@ -13,7 +13,7 @@
   
 	<h1>Sélectionnez vos plats</h1>
 	
-	
+	<%@ include file="../footer.jsp" %>
 	
 </body>
 </html>

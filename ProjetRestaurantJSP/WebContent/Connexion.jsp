@@ -8,18 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<header>
-    <h1><a href="Accueil.jsp">Restaurant</a></h1>
-
-    <div id="navigation">
-      <ul class="nav justify-content-center">
-        <li class="nav-item"> <a class="nav-link" href="Accueil.jsp">Accueil</a></li>
-        <li class="nav-item"> <a class="nav-link" href="#">Menu</a> </li>
-        <li class="nav-item"> <a class="nav-link" href="ServletAccesCommande">Commande</a> </li>
-        <li class="nav-item"> <a class="nav-link" href="Connexion.jsp">Connexion/Inscription</a> </li>
-      </ul>
-    </div>
-  </header>
+	<%@ include file="header.jsp" %>
   
   <h2>Connexion/Inscription</h2>
   
@@ -28,10 +17,10 @@
   <h3>Déjà client ? Connectez-vous:</h3>
 	<form action = "ServletConnexion">
 		<label for="identifiant">Identifiant</label>
-		<input name = "identifiant" type = "number"/><br><br>
+		<input name = "identifiant" type = "number" required/><br><br>
 	
 		<label for="mdp">Mot de passe</label>
-		<input name = "mdp" type = "password"/><br><br>
+		<input name = "mdp" type = "password" required/><br><br>
 	
 		<input type = "submit" value ="Se connecter"/>
 	</form>
@@ -40,9 +29,6 @@
 	
 	<h3>Première visite ? Inscrivez-vous:</h3>
 	<form action = "ServletInscription">
-		<label for="identifiant">Identifiant</label>
-		<input name = "identifiant" type = "number" required/><br><br>
-	
 		<label for="mdp">Mot de passe</label>
 		<input name = "mdp" type = "password" required/><br><br>
 		
@@ -57,5 +43,7 @@
 	
 		<input type = "submit" value ="S'inscrire"/>
 	</form>
+	
+	<%@ include file="footer.jsp" %>
 </body>
 </html>

@@ -45,17 +45,37 @@ public class DaoClientImpl implements DaoClient{
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
 
-		String sql = "insert into clients values(?,?,?,?,?)";
+		String sql = "insert into clients values(null,?,?,?,?)";
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setInt(1, c.getId());
-		ps.setString(2, c.getMdp());
-		ps.setString(3, c.getNom());
-		ps.setString(4, c.getPrenom());
-		ps.setString(5, c.getAdresse());
+		ps.setString(1, c.getMdp());
+		ps.setString(2, c.getNom());
+		ps.setString(3, c.getPrenom());
+		ps.setString(4, c.getAdresse());
 
 		ps.executeUpdate();
 
 		conn.close();
+	}
+	
+	public int IdCreate(Client c) throws ClassNotFoundException, SQLException {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
+
+		String sql = "insert into clients values(null,?,?,?,?)";
+		PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+		ps.setString(1, c.getMdp());
+		ps.setString(2, c.getNom());
+		ps.setString(3, c.getPrenom());
+		ps.setString(4, c.getAdresse());
+
+		ps.executeUpdate();
+		ResultSet key = ps.getGeneratedKeys();
+			
+		if (key.next())
+			return (key.getInt(1));
+
+		conn.close();
+		return 0;
 	}
 
 	@Override

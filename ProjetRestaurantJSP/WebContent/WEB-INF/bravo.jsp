@@ -12,5 +12,7 @@
 	<p>Numéro de commande :
 	<%= session.getAttribute("p")%>
 	</p>
+	
+	<%@ include file="../footer.jsp" %>
 </body>
 </html>

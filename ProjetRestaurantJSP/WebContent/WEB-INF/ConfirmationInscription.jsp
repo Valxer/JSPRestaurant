@@ -10,7 +10,13 @@
 </head>
 <body>
 	<%@ include file="../header.jsp" %>
-  
-	<h1>Vous ètes inscrit</h1>
+	
+	<%
+	
+	out.print("<h1>Vous ètes maintenant inscrit, votre numéro id est: " + request.getAttribute("numId") + "</h1>");
+	
+	%>
+	
+	<%@ include file="../footer.jsp" %>
 </body>
 </html>
