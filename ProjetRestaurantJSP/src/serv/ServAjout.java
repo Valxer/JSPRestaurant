@@ -36,6 +36,10 @@ public class ServAjout extends HttpServlet {
 		if (request.getSession().getAttribute("panier")!= null) {
 			panier = (List<Achat>) request.getSession().getAttribute("panier");
 		}
+		int totalp = 0;
+		if(request.getSession().getAttribute("totalp")!= null){
+			totalp = (int) request.getSession().getAttribute("totalp");
+		}
 		int idart = Integer.parseInt(request.getParameter("select"));
 		int quantite = Integer.parseInt(request.getParameter("quantite"));
 		List<Article> articles = (List<Article>)request.getServletContext().getAttribute("articles");
@@ -49,7 +53,9 @@ public class ServAjout extends HttpServlet {
 		}
 		Achat a = new Achat(nomart,idart,quantite,total);
 		panier.add(a);
+		totalp += total;
 		
+		request.getSession().setAttribute("totalp", totalp);
 		request.getSession().setAttribute("panier", panier);
 		request.getRequestDispatcher("choixarticle.jsp").forward(request, response);
 	}

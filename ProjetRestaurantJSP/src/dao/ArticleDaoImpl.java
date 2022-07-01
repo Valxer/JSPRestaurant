@@ -14,7 +14,7 @@ import model.Article;
 public class ArticleDaoImpl implements DaoArticle {
 
 	public void delete(Article p) throws ClassNotFoundException, SQLException {
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
 
 		String sql = "delete from Articles where id= " + p.getRef();
@@ -27,7 +27,7 @@ public class ArticleDaoImpl implements DaoArticle {
 	}
 
 	public void update(Article p) throws ClassNotFoundException, SQLException {
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
 
 		String sql = "update Articles set nom='" + p.getNom() + "',description='" + p.getDescription() + "',prix=" + p.getPrix()
@@ -39,7 +39,7 @@ public class ArticleDaoImpl implements DaoArticle {
 	}
 
 	public void create(Article p) throws ClassNotFoundException, SQLException {
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
 
 		String sql = "insert into Articles values(?,?,?,?,?)";
@@ -57,7 +57,7 @@ public class ArticleDaoImpl implements DaoArticle {
 
 	public List<Article> findAll() throws ClassNotFoundException, SQLException {
 		ArrayList<Article> liste = new ArrayList<Article>();
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
 
 		String sql = "select * from articles";
@@ -82,7 +82,7 @@ public class ArticleDaoImpl implements DaoArticle {
 
 	public Article findById(Integer ref) throws ClassNotFoundException, SQLException {
 		Article a = null;
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
 
 		String sql = "select * from Articles where ref=" + ref;
@@ -104,9 +104,9 @@ public class ArticleDaoImpl implements DaoArticle {
 	public List<Article> selectByName(String nom) throws ClassNotFoundException, SQLException {
 		List<Article> articles = new ArrayList<Article>();
 		Article a = null;
-		Class.forName("com.mysql.cj.jdbc.Driver");
+		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/dbrestau", "root", "root");
-		String sql = "select * from Articles where nom like `" + nom;
+		String sql = "select * from Articles where nom like '" + nom+"'";
 		Statement st = conn.createStatement();
 		ResultSet rs = st.executeQuery(sql);
 		while (rs.next()) {
