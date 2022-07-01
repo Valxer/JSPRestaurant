@@ -57,7 +57,7 @@ public class ServAjout extends HttpServlet {
 		
 		request.getSession().setAttribute("totalp", totalp);
 		request.getSession().setAttribute("panier", panier);
-		request.getRequestDispatcher("choixarticle.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/choixarticle.jsp").forward(request, response);
 	}
 
 	/**

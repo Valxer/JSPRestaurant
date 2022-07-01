@@ -2,7 +2,6 @@ package serv;
 
 import java.io.IOException;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,14 +28,12 @@ public class ServletAccesCommande extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		if (session.getAttribute("client") == null){
 			request.getRequestDispatcher("Connexion.jsp").forward(request, response);
 		} else {
-			request.getRequestDispatcher("WEB-INF/Commande.jsp").forward(request, response);
+			request.getRequestDispatcher("WEB-INF/choixarticle.jsp").forward(request, response);
 		}
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
 	/**
