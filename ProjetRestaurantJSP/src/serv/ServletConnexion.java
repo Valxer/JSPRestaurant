@@ -40,7 +40,6 @@ public class ServletConnexion extends HttpServlet {
 			Client c = new DaoClientImpl().findById(identifiant);
 			if (c != null){
 				if (c.getMdp().equals(mdp)){
-					request.setAttribute("client", c);
 					request.getSession().setAttribute("client", c);
 					request.getRequestDispatcher("WEB-INF/ConfirmationConnexion.jsp").forward(request, response);
 				}

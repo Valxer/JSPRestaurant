@@ -8,7 +8,11 @@
     <div id="navigation">
       <ul class="nav justify-content-center">
         <li class="nav-item"> <a class="nav-link" href="Accueil.jsp">Accueil</a></li>
+<<<<<<< Updated upstream
         <li class="nav-item"> <a class="nav-link" href="Menu.jsp">Menu</a> </li>
+=======
+        <li class="nav-item"> <a class="nav-link" href="#">Menu</a> </li>
+>>>>>>> Stashed changes
         <% 
        	Client c = (Client)session.getAttribute("client");
        	if (c == null){

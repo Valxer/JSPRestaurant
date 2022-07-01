@@ -30,6 +30,13 @@
 	
 	<h3>Première visite ? Inscrivez-vous:</h3>
 	<form action = "ServletInscription">
+<<<<<<< Updated upstream
+=======
+	
+		<label for="mdp">Mot de passe</label>
+		<input name = "mdp" type = "password" required/><br><br>
+		
+>>>>>>> Stashed changes
 		<label for="nom">Nom</label>
 		<input name = "nom" type = "text" placeholder="Votre nom" required/><br><br>
 		

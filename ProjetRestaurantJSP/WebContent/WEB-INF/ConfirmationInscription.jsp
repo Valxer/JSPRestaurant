@@ -10,6 +10,7 @@
 </head>
 <body>
 	<%@ include file="../header.jsp" %>
+<<<<<<< Updated upstream
 	
 	<%
 	
@@ -18,5 +19,14 @@
 	%>
 	
 	<%@ include file="../footer.jsp" %>
+=======
+  
+	
+	<%
+	
+	out.print("<h1>Vous ètes maintenant inscrit, votre numéro identifiant est: " + c.getId() + "</h1>");
+	
+	%>
+>>>>>>> Stashed changes
 </body>
 </html>
