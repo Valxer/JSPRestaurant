@@ -55,7 +55,7 @@ public class ServAjout extends HttpServlet {
 		Achat a = new Achat(nomart, idart, quantite, total);
 		panier.add(a);
 		totalp += total;
-		
+
 		request.getSession().setAttribute("totalp", totalp);
 		request.getSession().setAttribute("panier", panier);
 		request.getRequestDispatcher("WEB-INF/choixarticle.jsp").forward(request, response);
